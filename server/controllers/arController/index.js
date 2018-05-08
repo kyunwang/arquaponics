@@ -3,5 +3,5 @@ exports.homePage = (req, res) => {
 };
 
 exports.d3Tests = (req, res) => {
-	res.render('d3', { message: 'd3 test page' });
+	res.render('arViews/d3', { message: 'd3 test page' });
 };
