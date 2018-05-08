@@ -1,3 +1,70 @@
+:root {
+  /* Fonts */
+  --font-family: helvetica, sans-serif;
+
+    /* Base font */
+    --base-font-size: 1em;
+    --base-font-weight: 400;
+    --base-line-height: 1.4;
+
+    /* Title font */
+    --title-font-size: 3em;
+    --title-font-weight: 700;
+    --title-line-height: 1;
+
+    /* Heading font */
+    --heading-font-size: 1.5em;
+    --heading-font-weight: 500;
+    --heading-line-height: 1.4;
+
+  /* Colors */
+  --color-primary: #000000;
+  --color-secondary: #000000;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+
+  /* Spacing */
+  --spacing-unit: 1.5rem;
+}
+
+/*
+====================
+  General
+====================
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+body {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: var(--base-line-height);
+}
+
 h1 {
-    color: red;
+  color: var(--color-primary);
+  font-size: var(--title-font-size);
+  font-weight: var(--title-font-weight);
+  line-height: var(--title-line-height);
+}
+
+h2 {
+  color: var(--color-primary);
+  font-size: var(--heading-font-size);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+}
+
+p {
+  max-width: 30em;
 }
