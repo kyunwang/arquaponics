@@ -191,13 +191,28 @@ main {
 }
 
 .intro h1 {
-  margin: 5rem auto;
-  /* margin: calc(2 * var(--spacing-unit)) auto; */
+  margin: 3rem auto;
 }
 
 .intro h2 {
   max-width: 30rem;
   margin: 5rem auto;
-  /* margin: calc(2 * var(--spacing-unit)) auto; */
   text-align: center;
+}
+
+.intro p {
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.intro p > a {
+  display: block;
+  margin: .5rem;
+  color: var(--color-black);
+  font-size: var(--heading-font-size);
+  font-weight: var(--heading-font-weight);
+}
+.intro p > a:hover,
+.intro p > a:active {
+  text-decoration: none;
 }
