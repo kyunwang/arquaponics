@@ -65,7 +65,39 @@ function render(data) {
 				z: 0,
 			};
 		})
-		.attr('depth', 0.5);
+		.attr('depth', 0.2);
 }
 
-render(fakeData);
+function renderLine(data) {
+	var hscale = d3
+		.scaleLinear()
+		.domain([0, d3.max(data)])
+		.range([0, 3]);
+
+	// we select the scene object just like an svg
+	var curveTrack = d3.select('#track1');
+
+	// we use d3's enter/update/exit pattern to draw and bind our dom elements
+	// var bars = scene.selectAll('a-cube.bar').data(data);
+
+	curveTrack
+		.selectAll('a-curve-point')
+		.data(data)
+		.enter()
+		.append('a-curve-point')
+		.attr('position', function(d, i) {
+			var position = {
+				x: 0.15 * (i * 2),
+				// x: 0,
+				// y: 0.25 * (i * 2),
+				y: 0,
+				// z: -0.25 * (i * 2),
+				z: 0 - hscale(d) / 2,
+			};
+			return position;
+		});
+	// .attr('depth', 0.2);
+}
+
+// render(fakeData);
+renderLine(fakeData);
