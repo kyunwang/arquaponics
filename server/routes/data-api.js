@@ -7,6 +7,7 @@ const router = express.Router();
 // const allPower = '/exchange/power/#';
 
 
-// router.get('/', arController.apiTest);
+router.get('/', arController.apiTest);
 console.log(arController.apiTest);
+
 module.exports = router;
