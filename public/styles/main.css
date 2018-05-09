@@ -170,8 +170,7 @@ a[role='button']:active::after {
 */
 
 main {
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
   max-width: 75rem;
   padding: var(--spacing-unit);
@@ -183,3 +182,21 @@ main {
   Intro
 ====================
 */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.intro h1 {
+  margin: 5rem auto;
+  /* margin: calc(2 * var(--spacing-unit)) auto; */
+}
+
+.intro h2 {
+  max-width: 30rem;
+  margin: 5rem auto;
+  /* margin: calc(2 * var(--spacing-unit)) auto; */
+  text-align: center;
+}
