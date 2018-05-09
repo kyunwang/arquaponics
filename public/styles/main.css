@@ -8,12 +8,12 @@
     --base-line-height: 1.4;
 
     /* Title font */
-    --title-font-size: 5em;
+    --title-font-size: 2.5em;
     --title-font-weight: 700;
     --title-line-height: 1;
 
     /* Heading font */
-    --heading-font-size: 1.5em;
+    --heading-font-size: 1.25em;
     --heading-font-weight: 600;
     --heading-line-height: 1.4;
 
@@ -25,6 +25,15 @@
 
   /* Spacing */
   --spacing-unit: 1.5rem;
+}
+@media all and (min-width: 40rem) {
+  :root {
+    /* Title font */
+    --title-font-size: 5em;
+
+    /* Heading font */
+    --heading-font-size: 1.5em;
+  }
 }
 
 /*
@@ -50,11 +59,6 @@ body {
   font-size: var(--base-font-size);
   font-weight: var(--base-font-weight);
   line-height: var(--base-line-height);
-}
-
-main {
-  display: flex;
-  flex-direction: column;
 }
 
 h1 {
@@ -146,4 +150,15 @@ a[role='button']:hover::after,
 a[role='button']:focus::after,
 a[role='button']:active::after {
   bottom: 0;
+}
+
+/*
+====================
+  Main
+====================
+*/
+
+main {
+  display: flex;
+  flex-direction: column;
 }
