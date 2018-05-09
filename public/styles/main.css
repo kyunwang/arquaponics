@@ -71,14 +71,16 @@ p {
 }
 
 button,
-a[role="button"] {
+a[role='button'] {
   position: relative;
+  top: 0;
   display: inline-block;
   min-width: 15rem;
   width: auto;
   height: 3.75rem;
   padding: calc((3.75rem - var(--heading-font-size)) / 2) var(--spacing-unit);
   border-radius: 5px;
+  outline: 0;
   color: var(--color-black);
   font-size: var(--heading-font-size);
   font-weight: var(--heading-font-weight);
@@ -86,11 +88,13 @@ a[role="button"] {
   text-decoration: none;
   line-height: var(--heading-line-height);
   background-color: var(--color-primary);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
 }
 button::after,
-a[role="button"]::after {
+a[role='button']::after {
   position: absolute;
-  right: 0rem;
+  left: 0;
   bottom: -.5rem;
   z-index: -1;
   display: block;
@@ -99,4 +103,19 @@ a[role="button"]::after {
   border-radius: 5px;
   background-color: var(--color-white);
   content: '';
+  transition: all .3s ease-in-out;
+}
+button:hover,
+button:focus,
+a[role='button']:hover,
+a[role='button']:focus,
+a[role='button']:active {
+  top: .5rem;
+}
+button:hover::after,
+button:focus::after,
+a[role='button']:hover::after,
+a[role='button']:focus::after,
+a[role='button']:active::after {
+  bottom: 0;
 }
