@@ -26,7 +26,7 @@
   /* Spacing */
   --spacing-unit: 1.5rem;
 }
-@media all and (min-width: 40rem) {
+@media all and (min-width: 35rem) {
   :root {
     /* Title font */
     --title-font-size: 5em;
@@ -75,8 +75,14 @@ h1::before,
 h1::after {
   position: absolute;
   z-index: -1;
-  height: 1.5rem;
+  height: 1rem;
   content: '';
+}
+@media all and (min-width: 35rem) {
+  h1::before,
+  h1::after {
+    height: 1.5rem;
+  }
 }
 h1::before {
   left: -50vw;
@@ -86,9 +92,14 @@ h1::before {
 }
 h1::after {
   left: -15vw;
-  bottom: -1.75rem;
+  bottom: -1.25rem;
   width: calc(15vw + 80%);
   background-color: var(--color-primary);
+}
+@media all and (min-width: 35rem) {
+  h1::after {
+    bottom: -1.75rem;
+  }
 }
 
 h2 {
@@ -161,4 +172,8 @@ a[role='button']:active::after {
 main {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 75rem;
+  padding: var(--spacing-unit);
+  margin: 0 auto;
 }
