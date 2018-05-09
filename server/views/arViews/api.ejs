@@ -5,4 +5,23 @@
 	<p>api test</p>
   <p></p>
 
+	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+	<script type="text/javascript">
+		var sock = new SockJS('https://stomp.spectral.energy:15674/ws');
+
+		sock.onopen = function() {
+			console.log('open');
+			sock.send('test');
+		};
+
+		sock.onmessage = function(e) {
+				console.log('message', e.data);
+				sock.close();
+		};
+
+		sock.onclose = function() {
+				console.log('close');
+		};
+	</script>
+
 <%- include('../partials/footer.ejs') %>
