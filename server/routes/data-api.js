@@ -1,28 +1,33 @@
 const express = require('express');
 const arController = require('../controllers/arController');
-const sockjs = require('sockjs');
-const Stomp = require('@stomp/stompjs');
+const SockJS = require('sockjs-client-node');
+const Stomp = require('stompjs');
 
 const router = express.Router();
-const client = Stomp.client('ws://stomp.spectral.energy:15674/ws');
-const allPower = '/exchange/power/#';
+const allPower = '/exchange/power/C0';
 
 require('dotenv').config({path:'./vars.env'});
 
-client.connect(process.env.USERNAME, 'mnwdTGgQu5zPmSrz', onConnect, console.error, '/');
-// client.connect('web', 'mnwdTGgQu5zPmSrz', onConnect, console.error, '/');
-
-
-function onConnect(someStuff) {
-  // console.log('data', someStuff);
-  console.log(allPower, someStuff);
-  client.subscribe(allPower, onData(someStuff));
+const stomp = {
+  url: new SockJS('https://app.jouliette.net/stomp'),
+  client: null,
+  data: [],
+  init(){
+    this.client = Stomp.over(this.url);
+    this.client.connect(process.env.USERNAME, process.env.PASSWORD, this.onConnect, console.error,'/')
+  },
+  onConnect(){
+    console.log('connected');
+    stomp.client.subscribe(allPower, stomp.onData);
+  },
+  onData(d){
+    stomp.data.push(d.body);
+    console.log(stomp.data);
+  }
 };
 
-function onData(data) {
-  console.log(data.body);
-  // data = JSON.parse(data.body);
-};
+stomp.init();
+
 
 // const echo = sockjs.createServer({ sockjs_url: 'http://cdn.jsdelivr.net/sockjs/1.0.1/sockjs.min.js'});
 // echo.on('connection', function(connec) {
