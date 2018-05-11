@@ -163,6 +163,14 @@ a[role='button']:focus::after,
 a[role='button']:active::after {
   bottom: 0;
 }
+@media all and (prefers-reduced-motion: reduce) {
+  button,
+  button::after,
+  a[role='button'],
+  a[role='button']::after {
+    transition: none;
+  }
+}
 
 /*
 ====================
