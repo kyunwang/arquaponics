@@ -14,7 +14,7 @@ exports.tourView = (req, res) => {
 // Can be deleted P.S. delete the template too
 exports.d3Tests = (req, res) => {
 	req.stomp.init();
-	res.render('arViews/d3', { message: 'd3 test page', data: req.stomp.data });
+	res.render('arViews/d3', { message: 'd3 test page', data: req.stomp.data, enableD3: true });
 };
 
 exports.apiTest = (req, res) => {
@@ -42,8 +42,7 @@ exports.getApiData = (req, res, next) => {
 			stomp.client.subscribe(allPower, stomp.onData);
 		},
 		onData(d) {
-			console.log('data');
-
+			// console.log('data');
 			stomp.data.push(d.body);
 			// console.log(stomp.data);
 		},
@@ -51,16 +50,6 @@ exports.getApiData = (req, res, next) => {
 
 	// stomp.init();
 
-	// const echo = sockjs.createServer({ sockjs_url: 'http://cdn.jsdelivr.net/sockjs/1.0.1/sockjs.min.js'});
-	// echo.on('connection', function(connec) {
-	//   connec.on('data', function(message){
-	//     connec.write(message);
-	//     console.log(message);
-	//   });
-	//   connec.on('close', function() {
-	//     console.log('closed');
-	//   });
-	// });
 	req.stomp = stomp;
 	next();
 };

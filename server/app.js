@@ -3,10 +3,16 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 
+// Import sock js stuff
+const sockjs = require('sockjs');
+const sockConnect = require('./sockConnect');
+
 const app = express();
 
+// Import the helper file
 const helpers = require('../public/scripts/helpers');
 
+// Import routes
 const routes = require('./routes');
 const apiRoutes = require('./routes/data-api');
 const arRoutes = require('./routes/arRoutes');
@@ -36,6 +42,17 @@ app.use((req, res, next) => {
 app.use('/', routes);
 app.use('/ar-tour', arRoutes);
 app.use('/api', apiRoutes);
+
+/*==========================
+=== Make a connection to the sockJS client
+===========================*/
+
+// Connecting the sock socket connection
+const echo = sockjs.createServer({
+	sockjs_url: '../public/scripts/vendor/sockjs-client.v1.min.js',
+});
+
+sockConnect(echo);
 
 // Listen to defined port
 app.listen(process.env.PORT, function() {
