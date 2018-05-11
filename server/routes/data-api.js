@@ -4,7 +4,7 @@ const SockJS = require('sockjs-client-node');
 const Stomp = require('stompjs');
 
 const router = express.Router();
-const allPower = '/exchange/power/C0';
+const allPower = '/exchange/power/#';
 
 require('dotenv').config({path:'./vars.env'});
 
