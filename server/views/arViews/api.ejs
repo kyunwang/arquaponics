@@ -2,13 +2,8 @@
 <%- include('../partials/header.ejs') %>
 
 	<h1>api dingen</h1>
-	<p>api test</p>
+	<p><%= data =%></p>
   <p></p>
 
-	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
-	<script type="text/javascript">
-	var url = 'ws://stomp.spectral.energy:15674/ws';
-	var client = Stomp.client(url);
-	</script>
 
 <%- include('../partials/footer.ejs') %>

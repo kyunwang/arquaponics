@@ -14,7 +14,7 @@ const stomp = {
   data: [],
   init(){
     this.client = Stomp.over(this.url);
-    this.client.connect(process.env.USERNAME, process.env.PASSWORD, this.onConnect, console.error,'/')
+    this.client.connect(process.env.USERNAME, process.env.PASSWORD, this.onConnect, console.error, '/')
   },
   onConnect(){
     console.log('connected');
@@ -26,8 +26,9 @@ const stomp = {
   }
 };
 
-stomp.init();
 
+
+stomp.init();
 
 // const echo = sockjs.createServer({ sockjs_url: 'http://cdn.jsdelivr.net/sockjs/1.0.1/sockjs.min.js'});
 // echo.on('connection', function(connec) {
