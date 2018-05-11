@@ -94,7 +94,6 @@ function paintLine() {
 	var ghl = document.getElementById('a-greenhouse-line');
 	console.log('painting', ghl);
 
-	// var element = document.getElementById('a-greenhouse-curve');
 	var element = document.getElementById('a-greenhouse-curve');
 	element.outerHTML = '';
 	delete element;
