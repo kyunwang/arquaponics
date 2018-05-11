@@ -1,6 +1,6 @@
 // fake data
-var fakeData = [10, 20, 30, 45, 50, 70, 100, 120, 130, 12, 29, 59, 200];
-
+// var fakeData = [10, 20, 30, 45, 50, 70, 100, 120, 130, 12, 29, 59, 200];
+var fakeData = [];
 var random = d3.randomNormal(0, 200);
 
 // we scale the height of our bars using d3's linear scale
@@ -48,7 +48,7 @@ function render(data) {
 function renderLine(data) {
 	// Assign and update the scale at each (re)render
 	// hscale.domain([0, d3.max(data)]);
-	hscale.domain([0, 1000]);
+	hscale.domain([156, 165]);
 
 	// We select the scene object just like an svg
 	var curveTrack = greenhouseLine.selectAll('a-curve-point').data(data);
@@ -62,24 +62,18 @@ function renderLine(data) {
 			var position = {
 				x: 0.15 * (i * 2),
 				y: 0,
-				z: 0 - hscale(d) / 2,
+				z: 0 - hscale(d.consumption) / 2,
 			};
 			return position;
-		})
-		.attr('geometry', function(d) {
-			var attr = {
-				primitive: 'box',
-				height: 0.1,
-				width: 0.1,
-				depth: 0.1,
-			};
-
-			return attr;
 		});
-	// .transition()
-	// .duration(1500)
-	// // .ease(d3.easeLinear)
-	// .on('start', tick);
+	// For testing the points. Renders a box at each curve point
+	// .attr('geometry', function(d) {
+	// 	var attr = {
+	// 		primitive: 'box',
+	// 		height: 0.1,
+	// 		width: 0.1,
+	// 		depth: 0.1,
+	// 	};
 
 	// EXIT
 	// Remove old elements as needed.
@@ -110,13 +104,13 @@ function paintLine() {
 
 // Initial render
 // render(fakeData);
-renderLine(fakeData);
+// renderLine(fakeData);
 
-setInterval(async function() {
-	console.log('Call');
-	await tick();
-	renderLine(fakeData);
-}, 1500);
+// setInterval(async function() {
+// 	console.log('Call');
+// 	await tick();
+// 	renderLine(fakeData);
+// }, 1500);
 
 // Grab a random sample of letters from the alphabet, in alphabetical order.
 // d3.interval(async function() {

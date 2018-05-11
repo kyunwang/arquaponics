@@ -3,7 +3,7 @@
 	<a-scene
 		embedded
 		arjs='debugUIEnabled: true;'
-		inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js" 
+		<!-- inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js" -->
 	>
 
 		<a-text value="TEST" rotation="270 0 0" position="0 0 0"></a-text>
@@ -17,15 +17,49 @@
 		<a-draw-curve id="a-greenhouse-curve" curveref="#a-greenhouse-line" material="shader: line; color: blue;"></a-draw-curve>
 		%>
 		
-		<a-entity id="a-greenhouse-curve" clone-along-curve="curve: #a-greenhouse-line; spacing: 0.05; scale: .5 .5 .5; rotation: 0 0 0;" 
-		position="0" geometry="primitive:box; height:0.1; width:0.2; depth:0.1" rotation="0 0 0"></a-entity>
-		<a-marker-camera preset='hiro'></a-marker-camera>
+		<a-entity
+			id="a-greenhouse-curve"
+			clone-along-curve="curve: #a-greenhouse-line; spacing: 0.05; scale: .5 .5 .5; rotation: 0 0 0;" 
+			rotation="0 0 0"
+			position="0"
+			geometry="primitive:box; height:0.1; width:0.2; depth:0.1"
+		></a-entity>
 
+		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 
 
 
+	<script type="text/javascript">
+		var sock = new SockJS('http://localhost:9999/echo');
+		// var sock = new SockJS('https://0214295b.ngrok.io');
+		sock.onopen = function() {
+			console.log('open');
+			// sock.send('bal');
+		};
+		
+		sock.onmessage = function(e) {
+			var data = JSON.parse(e.data);
 
+			fakeData.push(data);
+			// console.log(fakeData.length)
+			if (fakeData.length) {
+				if (fakeData.length > 20) {
+					fakeData.shift();	
+				}
+				renderLine(fakeData);
+			} 
+			// console.log(e.data, stomp)
+			// console.log('message', e.data);
+			// console.log(data);
+			// sock.close();
+			// e.data.init();
+		};
+		
+		sock.onclose = function() {
+			console.log('close');
+		};
+	</script>
 	<script src="/scripts/arGraphs.js"></script>
 
 <%- include('../partials/footer.ejs') %>
