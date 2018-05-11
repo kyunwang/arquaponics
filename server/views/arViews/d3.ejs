@@ -13,9 +13,10 @@
 		};
 		
 		sock.onmessage = function(e) {
-			// var stomp = JSON.parse(e.data);
+			var data = JSON.parse(e.data);
 			// console.log(e.data, stomp)
-			console.log('message', e.data);
+			// console.log('message', e.data);
+			console.log(data);
 			// sock.close();
 			// e.data.init();
 		};

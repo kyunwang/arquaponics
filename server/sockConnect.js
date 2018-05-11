@@ -10,11 +10,8 @@ function sockConnect(echo) {
 	echo.on('connection', function(connec) {
 		console.log('connected');
 
-		// connec.write(stomp);
-		connect();
-		// console.log(stomp.init);
-
-		// stomp.init();
+		// Connect to the stomp stream
+		connectStomp();
 
 		connec.on('data', function(message) {
 			console.log('On data', message);
@@ -23,13 +20,14 @@ function sockConnect(echo) {
 		});
 
 		connec.on('close', function() {
-			console.log('closed');
+			console.log('Closed sock connection');
 		});
 
-		function connect() {
-			console.log('STOMP');
+		function connectStomp() {
+			console.log('Start Stomp');
 
-			const endpoint = '/exchange/power/#';
+			const endpoint = '/exchange/power/11'; // Piepschuimhuis 2A
+			// const endpoint = '/exchange/power/#'; // Gets all
 
 			const stomp = {
 				url: new SockJS('https://app.jouliette.net/stomp'),
@@ -59,6 +57,7 @@ function sockConnect(echo) {
 				},
 			};
 
+			// Initialize
 			stomp.init();
 		}
 	});
