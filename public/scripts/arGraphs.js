@@ -9,11 +9,10 @@ var hscale = d3.scaleLinear().range([0, 5]);
 var greenhouseLine = d3.select('#a-greenhouse-line');
 
 function render(data) {
-	// we select the scene object just like an svg
+	// We select the scene object just like an svg
 	var scene = d3.select('#a-greenhouse');
 
-	// we use d3's enter/update/exit pattern to draw and bind our dom elements
-	// var bars = scene.selectAll('a-cube.bar').data(data);
+	// We use d3's enter/update/exit pattern to draw and bind our dom elements
 	scene
 		.selectAll('a-box')
 		.data(data)
@@ -51,10 +50,10 @@ function renderLine(data) {
 	// hscale.domain([0, d3.max(data)]);
 	hscale.domain([0, 1000]);
 
-	// we select the scene object just like an svg
+	// We select the scene object just like an svg
 	var curveTrack = greenhouseLine.selectAll('a-curve-point').data(data);
 
-	// we use d3's enter/update/exit pattern to draw and bind our dom elements
+	// We use d3's enter/update/exit pattern to draw and bind our dom elements
 	curveTrack
 		.enter()
 		.append('a-curve-point')
@@ -102,6 +101,7 @@ function paintLine() {
 	// 	'afterend',
 	// 	'<a-draw-curve id="a-greenhouse-curve" curveref="#a-greenhouse-line" material="shader: line; color: blue;"></a-draw-curve>'
 	// );
+
 	ghl.insertAdjacentHTML(
 		'afterend',
 		'<a-entity clone-along-curve="curve: #a-greenhouse-line; spacing: 0.05; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity>'

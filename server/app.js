@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 
-// Import sock js stuff
+// // Import sock js stuff
 const sockjs = require('sockjs');
 const sockConnect = require('./sockConnect');
 
@@ -16,6 +16,10 @@ const helpers = require('../public/scripts/helpers');
 const routes = require('./routes');
 const apiRoutes = require('./routes/data-api');
 const arRoutes = require('./routes/arRoutes');
+
+const echo = sockjs.createServer({
+	sockjs_url: '../public/scripts/vendor/sockjs-client.v1.min.js',
+});
 
 require('dotenv').config({ path: './vars.env' });
 
@@ -35,6 +39,7 @@ app.use((req, res, next) => {
 	res.locals.h = helpers;
 	res.locals.enableAr = false;
 	res.locals.enableD3 = false;
+	req.echo = echo;
 	next();
 });
 
@@ -47,12 +52,7 @@ app.use('/api', apiRoutes);
 === Make a connection to the sockJS client
 ===========================*/
 
-// Connecting the sock socket connection
-const echo = sockjs.createServer({
-	sockjs_url: '../public/scripts/vendor/sockjs-client.v1.min.js',
-});
-
-sockConnect(echo);
+// sockConnect(echo);
 
 // Listen to defined port
 app.listen(process.env.PORT, function() {
