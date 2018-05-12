@@ -53,14 +53,24 @@ What the Ceuvel does is making self made bio energy from plants and that energy 
 * [ExpressJS](https://expressjs.com/) - _Express is being used for the server_
 
 # The data
-*Information about the data here*
 <!-- data life cycle? data retention/database ? -->
-The data is being stored on a stomp server and we use a connection via a StompJS package to get that data. What we recieve is.
+The data is being stored on a stomp server and we use a connection via a StompJS package to get that data. What we receive is:
 
+<!-- example data -->
 ```
 
 ```
+That data we send to the client so we can use it for the AR and the website.
+
+### API
 <!-- Api: limitations, rate limit? not applied ?  -->
+The limitations of the API is that you have not much to deal with. You get consumption and production of energy. _But that's what it supposed to do_. We get data every 2-3 seconds. We show the data real-time so there won't be any delay.
+
+### on the AR side
+We use the body of the data to make it a bit more interesting. We update the AR-graph with 20 records. When the 20 records are hit it will drop the last one. So you have an "animation" going with the data.
+
+### Data that isn't real-time
+Unfortunate we have a lot of data that isn't real time, that data will be used for the other graphs, but mostly it will enhance the story. When the real-world problems are fixed we can have access to that data and use it real-time.
 
 # Tools
 The tools/packages used for this project:
