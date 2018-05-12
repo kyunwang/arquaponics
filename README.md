@@ -36,7 +36,7 @@ There will be a website where you can see all the data and all the explanation o
 ## Story
 What the Ceuvel does is making self made bio energy from plants and that energy will be needed to make some produce. That produce is used for the café.
 
-## User Stories
+## User Stories/Stakeholders
 > As space&matter (a partner) I would want to know how the Ceuvel is doing on generating energy and how much it's sustainable energy is presented.
 
 > As gemeente Amsterdam (a partner) I would want to know why this place is good for the enviroment, and what they do better.
