@@ -3,8 +3,8 @@
 	<a-scene
 		embedded
 		arjs='debugUIEnabled: true;'
+		>
 		<!-- inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js" -->
-	>
 
 		<a-text value="TEST" rotation="270 0 0" position="0 0 0"></a-text>
 				
@@ -40,24 +40,22 @@
 		
 		sock.onmessage = function(e) {
 			var data = JSON.parse(e.data);
+			// console.log(data.consumption)
 
-			fakeData.push(data);
-			// console.log(fakeData.length)
+			// Push data to the 
+			graphData.push(data);
+
 			if (fakeData.length) {
 				if (fakeData.length > 20) {
 					fakeData.shift();	
 				}
 				renderLine(fakeData);
 			} 
-			// console.log(e.data, stomp)
-			// console.log('message', e.data);
-			// console.log(data);
-			// sock.close();
-			// e.data.init();
+
 		};
 		
 		sock.onclose = function() {
-			console.log('close');
+			console.log('Sock connection closed');
 		};
 	</script>
 	<script src="/scripts/arGraphs.js"></script>
