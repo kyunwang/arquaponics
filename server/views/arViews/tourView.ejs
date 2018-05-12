@@ -16,13 +16,13 @@
 		Draws a line
 		<a-draw-curve id="a-greenhouse-curve" curveref="#a-greenhouse-line" material="shader: line; color: blue;"></a-draw-curve>
 		%>
-		
+
 		<a-entity
-			id="a-greenhouse-curve"
-			clone-along-curve="curve: #a-greenhouse-line; spacing: 0.05; scale: .5 .5 .5; rotation: 0 0 0;" 
-			rotation="0 0 0"
-			position="0"
-			geometry="primitive:box; height:0.1; width:0.2; depth:0.1"
+		id="a-greenhouse-curve"
+		clone-along-curve="curve: #a-greenhouse-line; spacing: 0.05; scale: .5 .5 .5; rotation: 0 0 0;" 
+		rotation="0 0 0"
+		position="0"
+		geometry="primitive:box; height:0.1; width:0.2; depth:0.1"
 		></a-entity>
 
 		<a-marker-camera preset='hiro'></a-marker-camera>
@@ -45,11 +45,11 @@
 			// Push data to the 
 			graphData.push(data);
 
-			if (fakeData.length) {
-				if (fakeData.length > 20) {
-					fakeData.shift();	
+			if (graphData.length) {
+				if (graphData.length > 20) {
+					graphData.shift();	
 				}
-				renderLine(fakeData);
+				renderLine(graphData);
 			} 
 
 		};
