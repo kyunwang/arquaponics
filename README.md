@@ -33,10 +33,23 @@ There will be a website where you can see all the data and all the explanation o
 ## Story
 What the Ceuvel does is making self made bio energy from plants and that energy will be needed to make some produce. That produce is used for the café.
 
-## User Scenario
+## User Stories
 > As space&matter (a partner) I would want to know how the Ceuvel is doing on generating energy and how much it's sustainable energy is presented.
 
-> As gemeente Amsterdam (a partner) I would want to know why this place is good
+> As gemeente Amsterdam (a partner) I would want to know why this place is good for the enviroment, and what they do better.
+
+## User scenario
+> Rick CTO of Space&matter wants to know more of the investment of the Ceuvel, and what the Ceuvel does.
+
+> Marit is a investment agent for the Gemeente Amsterdam. She wants to know what kind of benefit the Ceuvel has for Amsterdam and what the Ceuvel have researched and implemented.
+
+## (ideal) User flow
+Rick
+> .. When Rick arrive at the gate and/or done after having the introductory Rick would be seeing a sign to show me how to get started to see "more" insights in the Ceuvel. As Rick progresses he would see recognisable points to use so he can see more.
+
+
+Marit
+> ..Marit noticed that there are signs with stickers everywhere. She notice that with the application she will find more accomplishments the Ceuvel have achieved. With the interaction of these AR she has more insights. afterwards she can visit the website to see everything.
 
 ## Goal
 1. The Goal of this project is to add an awareness of how bad grey energy is and show that the greenhouse in the Ceuvel a great alternative is.
