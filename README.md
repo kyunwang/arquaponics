@@ -1,6 +1,9 @@
 # ARquaponics
 An augmented reality tour that explains the benefits and shows the insights of the Ceuvel.
 
+------------------------------------
+
+
 A collaboration with:
 - [VincentKempers](https://github.com/VincentKempers)
 - [nourbayard](https://github.com/nourbayard)
