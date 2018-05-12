@@ -1,5 +1,5 @@
 # ARquaponics
-*Introduction about the project here*
+An augmented reality tour that explains the benefits and shows the insights of the Ceuvel.
 
 A collaboration with:
 - [VincentKempers](https://github.com/VincentKempers)
@@ -83,7 +83,7 @@ The limitations of the API is that you have not much to deal with. You get consu
 We use the body of the data to make it a bit more interesting. We update the AR-graph with 20 records. When the 20 records are hit it will drop the last one. So you have an "animation" going with the data.
 
 ### Data that isn't real-time
-Unfortunate we have a lot of data that isn't real time, that data will be used for the other graphs, but mostly it will enhance the story. When the real-world problems are fixed we can have access to that data and use it real-time.
+Unfortunately we have a lot of data that isn't real time, that data will be used for the other graphs, but mostly it will enhance the story. When the real-world problems are fixed we can have access to that data and use it real-time.
 
 # Tools
 The tools/packages used for this project:
