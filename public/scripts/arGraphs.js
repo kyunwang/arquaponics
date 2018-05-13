@@ -1,17 +1,12 @@
-// fake data
-// var graphData = [10, 20, 30, 45, 50, 70, 100, 120, 130, 12, 29, 59, 200];
-// var randomNum = d3.randomNormal(0, 200);
-
 // Data container (max length of 20)
 var graphData = [];
 
 // We scale the height of our bars using d3's linear scale
 var vScale = d3.scaleLinear().range([0, 5]);
-// var x = d3.scaleTime().range([0, width]);
 
-// var yScale = d3.scaleLinear().range([100, 0]);
-
-var greenhouseLine = d3.select('#a-greenhouse-line');
+// Getting the containers to assign the curve points to
+var greenhouseConsumption = d3.select('#a-greenhouse-consumption');
+var greenhouseSolar = d3.select('#a-greenhouse-solar');
 
 var greenhouseCon = d3.select('#a-greenhouse-con');
 
@@ -34,7 +29,7 @@ function renderLine(data) {
 	vScale.domain([getMinimum(data), getMaximum(data)]);
 
 	// We select the scene object just like an svg
-	var curveTrack = greenhouseLine.selectAll('a-curve-point').data(data);
+	var curveTrack = greenhouseConsumption.selectAll('a-curve-point').data(data);
 
 	// We use d3's enter/update/exit pattern to draw and bind our dom elements
 	curveTrack
