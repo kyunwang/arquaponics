@@ -1,8 +1,7 @@
 # ARquaponics
-An augmented reality tour that explains the benefits and shows the insights of De Ceuvel.
+An augmented reality tour that explains the benefits and shows the insights of [De Ceuvel](http://deceuvel.nl/en/).
 
 ------------------------------------
-
 
 A collaboration with:
 - [VincentKempers](https://github.com/VincentKempers)
