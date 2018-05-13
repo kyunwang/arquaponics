@@ -6,18 +6,21 @@
 		>
 		<!-- inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js" -->
 
-		<!-- <a-text value="TEST" rotation="270 0 0" position="0 0 0"></a-text> -->
-				
+		<!-- Container for consumption line/curve point -->
 		<a-curve id="a-greenhouse-consumption-line" type="Line">
 			<%# Example point: <a-curve-point position="-2 1 -3"></a-curve-point> %>
 		</a-curve>
-				
+		
+		<!-- Container for solar line/curve point -->
 		<a-curve id="a-greenhouse-solar-line" type="Line"></a-curve>
 
 		<%#
 		Draws a line
 		<a-draw-curve id="a-greenhouse-curve" curveref="#a-greenhouse-line" material="shader: line; color: blue;"></a-draw-curve>
 		%>
+
+
+		<!-- Container for the linegraph -->
 		<a-entity
 			id="a-graph-con"
 			rotation="0 0 0"
@@ -39,7 +42,7 @@
 				scale="0.7"
 			></a-entity>
 
-
+			<!-- Container for the labels -->
 			<a-entity
 				id="a-label-con"
 				position="1.3 0 .2"
@@ -48,7 +51,7 @@
 				<!-- Consumption/Use label -->
 				<a-entity
 					id="a-label-consumption"
-					position=".3 0 0"
+					position=".45 0 0"
 					rotation="270 0 0"
 				>
 					<a-entity
