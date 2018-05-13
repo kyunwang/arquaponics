@@ -2,6 +2,7 @@
 
 <div align="center">
   <img src="assets/arquaponies-logo.png">
+  <p> Arquaponies </p> 
 </div>
 <div align="center">
   :globe_with_meridians: <img src="https://img.shields.io/badge/build-0.0.1-yellow.svg">
@@ -108,4 +109,4 @@ The tools/packages used for this project:
 * [ExpressJS](https://expressjs.com/) - _Express is being used for the server_
 
 # License
-GPL
+GPLv3 :copyright: Arquaponies
