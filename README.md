@@ -1,7 +1,8 @@
 <h1 align="center">Arquaponics</h1>
 
-<img align="center" src="assets/arquaponies-logo.png">
-
+<div align="center">
+  <img src="assets/arquaponies-logo.png">
+</div>
 <div align="center">
   :globe_with_meridians: <img src="https://img.shields.io/badge/build-0.0.1-yellow.svg">
 </div>
