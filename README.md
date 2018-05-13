@@ -1,5 +1,14 @@
-# ARquaponics
-An augmented reality tour that explains the benefits and shows the insights of [De Ceuvel](http://deceuvel.nl/en/).
+<h1 align="center">Arquaponics</h1>
+
+<img align="center" src="assets/arquaponies-logo.svg">
+
+<div align="center">
+  :globe_with_meridians: <img src="https://img.shields.io/badge/build-0.0.1-yellow.svg">
+</div>
+<div align="center">
+  <strong>An augmented reality tour that explains the benefits of aquaponics and shows the data insights of <a href="http://deceuvel.nl/en/">De Ceuvel</a></strong>
+</div>
+<br />
 
 ------------------------------------
 
