@@ -61,22 +61,6 @@ function renderLine(data) {
 // Initial render
 renderLine(graphData);
 
-//Trying out rendering ticks
-function renderY(data) {
-	console.log('dd', data);
-	greenhouseCon.append('a-entity').call(d3.axisLeft(yScale));
-
-	// .append('a-text')
-	// .attr('position', '0 0 0')
-	// .attr('value', 'Hello');
-
-	// text label for the y axis
-	// greenhouseCon
-	// .append('a-text')
-	// .attr('position', '0 0 0')
-	// .attr('value', 'Hello');
-}
-
 // Getting the min/max numbers of an array
 function getMinimum(data) {
 	var min = d3.min(data, function(d) {
