@@ -1,19 +1,17 @@
 
 <%- include('../partials/header.ejs') %>
 
-	<h1>Homepage</h1>
+	<h1>Data</h1>
 	<p><%= message %></p>
   <pre><%= h.dump(data) %></pre>
 
 
 
-  <svg width="960" height="500"></svg>
-
-  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <svg id="harvest" width="960" height="500"></svg>
 
   <script type="text/javascript">
 
-  var svg = d3.select("svg"),
+  var svg = d3.select("#harvest"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom;
@@ -24,38 +22,34 @@ var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
 var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.tsv("/data.tsv", function(d) {
-  d.frequency = +d.frequency;
-  return d;
-}, function(error, data) {
-  if (error) throw error;
+d3.csv("/productionAquaponics.csv").then(function (data) {
+	x.domain(d3.extent(data, function(d) { return d.Date; }));
+	y.domain(d3.extent(data, function(d) { return d.herbs; }));
 
-  x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+	g.append("g")
+		.attr("transform", "translate(0" + height + ")")
+		.call(d3.axisBottom(x))
+		.select(".domain");
 
-  g.append("g")
-      .attr("class", "axis axis--x")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-
-  g.append("g")
-      .attr("class", "axis axis--y")
-      .call(d3.axisLeft(y).ticks(10, "%"))
+		g.append("g")
+      .call(d3.axisLeft(y))
     .append("text")
+      .attr("fill", "#000")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", "0.71em")
       .attr("text-anchor", "end")
-      .text("Frequency");
+      .text("amount of herbs");
 
-  g.selectAll(".bar")
-    .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.letter); })
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("width", x.bandwidth())
-      .attr("height", function(d) { return height - y(d.frequency); });
+  g.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("stroke-width", 1.5)
+      .attr("d", line);
+
 });
 
   </script>

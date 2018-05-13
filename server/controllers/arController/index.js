@@ -14,7 +14,7 @@ exports.tourView = (req, res) => {
 // Can be deleted P.S. delete the template too
 exports.d3Tests = (req, res) => {
 	req.stomp.init();
-	res.render('arViews/d3', { message: 'd3 test page', data: req.stomp.data });
+	res.render('arViews/d3', { message: 'd3 test page', data: req.stomp.data, enableD3:true });
 };
 
 exports.apiTest = (req, res) => {
