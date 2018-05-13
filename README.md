@@ -39,7 +39,7 @@ First you need to create a `vars.env` file with `PORT=3100` (Or any port you lik
 # Concept
 The concept of this product is to have an introductory to the story of De Ceuvel. By telling the story you can't see the effect of the  overall energy consumption or energy output. By making a nice data visualisation of every data output on a screen will not do the **awesome** story of De Ceuvel justice.
 
-Our concept is a Augmented Reality (AR) tour that you can follow on the awesome ground of De Ceuvel. There will be AR stickers on the ground that you can scan with the Website. What you will see after scanning is a live data graph in AR which will show you what it going on this particular Boat. You will find a bit of text in AR that will explain what you see and what benefit it will bring.
+Our concept is a Augmented Reality (AR) tour that you can follow on the awesome ground of De Ceuvel. There will be AR stickers on the ground that you can scan with the Website. What you will see after scanning is a live data graph about the energy consumption in AR which will show you what it going on this particular Boat. You will find a bit of text in AR that will explain what you see and what benefit it will bring.
 
 There will be a companion website, where you can see all the data and the explanation of the data. This is for the user who wants to look back and ponder on the amazing things De Ceuvel does.
 
