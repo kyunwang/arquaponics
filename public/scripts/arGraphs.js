@@ -5,46 +5,41 @@ var graphData = [];
 var vScale = d3.scaleLinear().range([0, 5]);
 
 // Getting the containers to assign the curve points to
-var greenhouseConsumption = d3.select('#a-greenhouse-consumption-line');
-var greenhouseSolar = d3.select('#a-greenhouse-solar-line');
+var ghConsumption = d3.select('#a-greenhouse-consumption-line');
+var ghSolar = d3.select('#a-greenhouse-solar-line');
 
 var greenhouseCon = d3.select('#a-greenhouse-con');
 
 function renderLine(data) {
 	if (data.length === 0) return;
 
-	// if (data.length === 1) {
-	// 	console.log('Got first data');
-	// 	// renderY(data);
-	// }
-
-	// yScale.domain([
-	// 	150,
-	// 	d3.max(data, function(d) {
-	// 		return d.consumption + 20;
-	// 	}),
-	// ]);
-
 	// Assign and update the scale at each (re)render
 	vScale.domain([getMinimum(data), getMaximum(data)]);
 
 	// We select the scene object just like an svg
-	var curveTrack = greenhouseConsumption.selectAll('a-curve-point').data(data);
+	var ghConLine = ghConsumption.selectAll('a-curve-point').data(data);
+	var ghSolLine = ghSolar.selectAll('a-curve-point').data(data);
 
+	// Calling the function to set the curve points
+	// Which will create the path for the line
+	setLine(ghConLine, 'consumption');
+	setLine(ghSolLine, 'solar');
+}
+
+function setLine(lineGraph, type) {
 	// We use d3's enter/update/exit pattern to draw and bind our dom elements
-	curveTrack
+	lineGraph
 		.enter()
 		.append('a-curve-point')
-		.merge(curveTrack)
+		.merge(lineGraph)
 		.attr('position', function(d, i) {
 			var position = {
 				x: 0.1 * (i * 2),
 				y: 0,
-				z: 0 - vScale(d.consumption) / 2,
+				z: 0 - vScale(normalizeNum(d[type])) / 2,
 			};
 			return position;
 		});
-
 	// For testing the points. Renders a box at each curve point
 	// .attr('geometry', function(d) {
 	// 	var attr = {
@@ -55,7 +50,7 @@ function renderLine(data) {
 	// 	};
 
 	// Remove old elements as needed.
-	curveTrack.exit().remove();
+	lineGraph.exit().remove();
 }
 
 // Initial render
