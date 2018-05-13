@@ -1,5 +1,5 @@
 # ARquaponics
-An augmented reality tour that explains the benefits and shows the insights of the Ceuvel.
+An augmented reality tour that explains the benefits and shows the insights of De Ceuvel.
 
 ------------------------------------
 
@@ -27,39 +27,39 @@ First you need to create a `vars.env` file with `PORT=3100` (Or any port you lik
 4. You can now go to [`http://localhost:3100/`](http://localhost:3100/)
 
 # Concept
-The concept of this product is to have an introductory to the story of the Ceuvel. By telling the story you can't see the effect that it has on the overall energy consumption or energy output. By making a nice data visualisation of every data output on a screen will not do the **awesome** story of the Ceuvel justice.
+The concept of this product is to have an introductory to the story of De Ceuvel. By telling the story you can't see the effect that it has on the overall energy consumption or energy output. By making a nice data visualisation of every data output on a screen will not do the **awesome** story of De Ceuvel justice.
 
-Our concept is a Augmented Reality (AR) tour that you can follow on the awesome ground of the Ceuvel. There will be AR stickers on the ground that you can scan with the Website. What you will see after scanning is live data graph in AR with this you can actually see what it going on this particular Boat. You will find a bit of text in AR that will explain what you see and what this will benefit.
+Our concept is a Augmented Reality (AR) tour that you can follow on the awesome ground of De Ceuvel. There will be AR stickers on the ground that you can scan with the Website. What you will see after scanning is live data graph in AR with this you can actually see what it going on this particular Boat. You will find a bit of text in AR that will explain what you see and what this will benefit.
 
-There will be a website where you can see all the data and all the explanation of the data. This is for the user who want's to look back and ponder on the amazing things the Ceuvel does.
+There will be a website where you can see all the data and all the explanation of the data. This is for the user who want's to look back and ponder on the amazing things De Ceuvel does.
 
 ## Story
-What the Ceuvel does is making self made bio energy from plants and that energy will be needed to make some produce. That produce is used for the café.
+What De Ceuvel does is making self made bio energy from plants and that energy will be needed to make some produce. That produce is used for the café.
 
 ## User Stories/Stakeholders
-> As space&matter (a partner) I would want to know how the Ceuvel is doing on generating energy and how much it's sustainable energy is presented.
+> As space&matter (a partner) I would want to know how De Ceuvel is doing on generating energy and how much it's sustainable energy is presented.
 
 > As gemeente Amsterdam (a partner) I would want to know why this place is good for the enviroment, and what they do better.
 
 ## User scenario
-> Rick CTO of Space&matter wants to know more of the investment of the Ceuvel, and what the Ceuvel does.
+> Rick CTO of Space&matter wants to know more of the investment of De Ceuvel, and what De Ceuvel does.
 
-> Marit is a investment agent for the Gemeente Amsterdam. She wants to know what kind of benefit the Ceuvel has for Amsterdam and what the Ceuvel have researched and implemented.
+> Marit is a investment agent for the Gemeente Amsterdam. She wants to know what kind of benefit De Ceuvel has for Amsterdam and what De Ceuvel have researched and implemented.
 
 ## (ideal) User flow
 Rick
-> .. When Rick arrive at the gate and/or done after having the introductory Rick would be seeing a sign to show me how to get started to see "more" insights in the Ceuvel. As Rick progresses he would see recognisable points to use so he can see more.
+> .. When Rick arrive at the gate and/or done after having the introductory Rick would be seeing a sign to show me how to get started to see "more" insights in De Ceuvel. As Rick progresses he would see recognisable points to use so he can see more.
 
 
 Marit
-> ..Marit noticed that there are signs with stickers everywhere. She notice that with the application she will find more accomplishments the Ceuvel have achieved. With the interaction of these AR she has more insights. afterwards she can visit the website to see everything.
+> ..Marit noticed that there are signs with stickers everywhere. She notice that with the application she will find more accomplishments De Ceuvel have achieved. With the interaction of these AR she has more insights. afterwards she can visit the website to see everything.
 
 ## Goal
-1. The Goal of this project is to add an awareness of how bad grey energy is and show that the greenhouse in the Ceuvel a great alternative is.
+1. The Goal of this project is to add an awareness of how bad grey energy is and show that the greenhouse in De Ceuvel a great alternative is.
 
-2. Learn about the Ceuvel and it's sustainability with green energy.
+2. Learn about De Ceuvel and it's sustainability with green energy.
 
-3. The Ceuvel wants to let the partners know what they are doing and how they are doing it.
+3. De Ceuvel wants to let the partners know what they are doing and how they are doing it.
 
 # Features
 * [d3.js](https://github.com/d3) - _d3JS is being used to render graphs with data_
