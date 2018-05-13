@@ -42,14 +42,13 @@ What De Ceuvel does is making self made bio energy from plants and that energy w
 > As gemeente Amsterdam (a partner) I would want to know why this place is good for the enviroment, and what they do better.
 
 ## User scenario
-> Rick CTO of Space&matter wants to know more of the investment of De Ceuvel, and what De Ceuvel does.
+> Rick CTO of Space&matter want to know more of the results that De Ceuvel have made.
 
 > Marit is a investment agent for the Gemeente Amsterdam. She wants to know what kind of benefit De Ceuvel has for Amsterdam and what De Ceuvel have researched and implemented.
 
 ## (ideal) User flow
 Rick
 > .. When Rick arrive at the gate and/or done after having the introductory Rick would be seeing a sign to show me how to get started to see "more" insights in De Ceuvel. As Rick progresses he would see recognisable points to use so he can see more.
-
 
 Marit
 > ..Marit noticed that there are signs with stickers everywhere. She notice that with the application she will find more accomplishments De Ceuvel have achieved. With the interaction of these AR she has more insights. afterwards she can visit the website to see everything.
@@ -62,7 +61,13 @@ Marit
 3. De Ceuvel wants to let the partners know what they are doing and how they are doing it.
 
 # Features
-
+The features we use for this application.
+* Augmented Reality (AR)
+  - we use AR to give this tour a bit more interactivity and understanding. With AR we can experience the data in a different way than a ~~just~~ dashboard.
+* Live Data (in AR).
+  - The live data in AR will show you _real time_ what is going on with that particular boat. As in consumption and what they gain from that boat.
+* Data on the website.
+  - With the new way of showing the data on the facility of De Ceuvel. You want to view the data later on with a bit more explanation. So there is a website that shows the data of others and explains that data with the story.
 
 # The data
 <!-- data life cycle? data retention/database ? -->
@@ -92,5 +97,6 @@ The tools/packages used for this project:
 * [SockJS](https://github.com/sockjs) - _SockJS is being used for the socket connection to the client_
 * [StompJS](https://www.npmjs.com/package/stompjs) - _StompJS is being used for the connection through the database to the server_
 * [ExpressJS](https://expressjs.com/) - _Express is being used for the server_
+
 # License
 MIT
