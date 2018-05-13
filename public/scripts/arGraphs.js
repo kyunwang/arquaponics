@@ -87,12 +87,12 @@ function getMinimum(data) {
 		return d.consumption;
 	});
 
-	return min - 10;
+	return min - 5;
 }
 
 function getMaximum(data) {
 	var max = d3.max(data, function(d) {
 		return d.consumption;
 	});
-	return max + 10;
+	return max + 5;
 }
