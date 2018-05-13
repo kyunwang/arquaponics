@@ -95,7 +95,7 @@ The limitations of the API is that you have not much to deal with. You get consu
 We use the body of the data to make it a bit more interesting. We update the AR-graph with 20 records. When the 20 records are hit it will drop the last one. So you have an "animation" going with the data.
 
 ### Data that isn't real-time
-Unfortunately we have a lot of data that isn't real time, that data will be used for the other graphs, but mostly it will enhance the story. When the real-world problems are fixed we can have access to that data and use it real-time.
+Unfortunately we have a lot of data that isn't real time, that data will be used for the other graphs, but mostly it will enhance the story.
 
 # Tools
 The tools/packages used for this project:
@@ -107,4 +107,4 @@ The tools/packages used for this project:
 * [ExpressJS](https://expressjs.com/) - _Express is being used for the server_
 
 # License
-MIT
+GPL
