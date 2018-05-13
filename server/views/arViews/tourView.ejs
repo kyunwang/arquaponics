@@ -18,7 +18,7 @@
 		Draws a line
 		<a-draw-curve id="a-greenhouse-curve" curveref="#a-greenhouse-line" material="shader: line; color: blue;"></a-draw-curve>
 		%>
-		<a-entity id="a-greenhouse-con">
+		<a-entity id="a-graph-con">
 			<a-entity
 				id="a-greenhouse-consumption"
 				clone-along-curve="curve: #a-greenhouse-consumption-line; spacing: 0.05; scale: .3 .3 .3; rotation: 0 0 0;" 
@@ -39,14 +39,69 @@
 				scale="0.7"
 			></a-entity>
 
-			<a-plane
-				color="#000"
-				height="3"
-				width="4"
-				rotation="270 0 0"
-				material="opacity: 0.8;"
-			></a-plane>
+
+			<a-entity id="a-label-con">
+
+			<!-- Consumption/Use label -->
+				<a-entity id="a-label-consumption"
+					position="0 0 0"
+					rotation="270 0 0"
+				>
+					<a-entity
+						geometry="
+							primitive: box;
+							width: .1;
+							height: .1;
+							depth: .1;"
+						material="color: #B21900;"
+					></a-entity>
+
+					<a-text
+						value="Use:"
+						position=".1 0 0"
+					></a-text>
+					<a-text
+						value="500"
+						position=".65 0 0"
+					></a-text>
+				</a-entity>
+
+				<!-- Solar label -->
+				<a-entity id="a-label-solar"
+					position="0 0 1.2"
+					rotation="270 0 0"
+				>
+					<a-entity
+						geometry="
+							primitive: box;
+							width: .1;
+							height: .1;
+							depth: .1;"
+						material="color: #00D91F;"
+					></a-entity>
+
+					<a-text
+						value="Solar:"
+						position=".1 0 0"
+					></a-text>
+					<a-text
+						value="500"
+						position=".75 0 0"
+					></a-text>
+				</a-entity>
+			</a-entity>
 		</a-entity>
+
+
+		<!-- The background of the graph -->
+		<a-plane
+			color="#000"
+			height="3"
+			width="4"
+			rotation="270 0 0"
+			position="0 -.5 0"
+			material="opacity: 0.85;"
+		></a-plane>
 
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>

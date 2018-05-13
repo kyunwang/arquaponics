@@ -2,13 +2,11 @@
 var graphData = [];
 
 // We scale the height of our bars using d3's linear scale
-var vScale = d3.scaleLinear().range([0, 5]);
+var vScale = d3.scaleLinear().range([0, 3]);
 
 // Getting the containers to assign the curve points to
 var ghConsumption = d3.select('#a-greenhouse-consumption-line');
 var ghSolar = d3.select('#a-greenhouse-solar-line');
-
-var greenhouseCon = d3.select('#a-greenhouse-con');
 
 function renderLine(data) {
 	if (data.length === 0) return;
