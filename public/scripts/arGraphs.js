@@ -77,12 +77,10 @@ function renderY(data) {
 	// .attr('value', 'Hello');
 }
 
+// Getting the min/max numbers of an array
 function getMinimum(data) {
 	var min = d3.min(data, function(d) {
-		// console.log(Math.abs(d.consumption));
-		// console.log(Math.abs(d.solar).toFixed(2));
-
-		return d.consumption;
+		return smallerNum(d.consumption, normalizeNum(d.solar));
 	});
 
 	return min - 5;
@@ -90,11 +88,23 @@ function getMinimum(data) {
 
 function getMaximum(data) {
 	var max = d3.max(data, function(d) {
-		return d.consumption;
+		return biggerNum(d.consumption, normalizeNum(d.solar));
 	});
 	return max + 5;
 }
 
-function normalizeNum(num) {}
+// Make all the numbers positive and with a decimal of 2
+function normalizeNum(num) {
+	return Math.abs(num).toFixed(2);
+}
 
-function smallerNum(data) {}
+// Return the smaller/larger number
+function smallerNum(num1, num2) {
+	if (num1 > num2) return num2;
+	return num1;
+}
+
+function biggerNum(num1, num2) {
+	if (num1 > num2) return num1;
+	return num2;
+}
