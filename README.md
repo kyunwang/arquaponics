@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="assets/arquaponies-logo.png">
-  <p> Arquaponies </p> 
+  <p> Arquaponies </p>
 </div>
 <div align="center">
   :globe_with_meridians: <img src="https://img.shields.io/badge/build-0.0.1-yellow.svg">
@@ -37,7 +37,7 @@ First you need to create a `vars.env` file with `PORT=3100` (Or any port you lik
 4. You can now go to [`http://localhost:3100/`](http://localhost:3100/)
 
 # Concept
-The concept of this product is to have an introductory to the story of De Ceuvel. By telling the story you can't see the effect that it has on the overall energy consumption or energy output. By making a nice data visualisation of every data output on a screen will not do the **awesome** story of De Ceuvel justice.
+The concept of this product is to have an introductory to the story of De Ceuvel. By telling the story you can't see the effect of the  overall energy consumption or energy output. By making a nice data visualisation of every data output on a screen will not do the **awesome** story of De Ceuvel justice.
 
 Our concept is a Augmented Reality (AR) tour that you can follow on the awesome ground of De Ceuvel. There will be AR stickers on the ground that you can scan with the Website. What you will see after scanning is a live data graph in AR which will show you what it going on this particular Boat. You will find a bit of text in AR that will explain what you see and what benefit it will bring.
 
