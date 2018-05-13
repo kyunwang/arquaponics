@@ -16,14 +16,25 @@
 		Draws a line
 		<a-draw-curve id="a-greenhouse-curve" curveref="#a-greenhouse-line" material="shader: line; color: blue;"></a-draw-curve>
 		%>
+		<a-entity id="a-greenhouse-con">
+			<a-entity
+				id="a-greenhouse-curve"
+				clone-along-curve="curve: #a-greenhouse-line; spacing: 0.05; scale: .5 .5 .5; rotation: 0 0 0;" 
+				rotation="0 0 0"
+				position="-1.2 .5 .4"
+				material="color: #B21900;"
+				geometry="primitive:box; height:0.1; width:0.2; depth:0.1;"
+				scale="0.7"
+			></a-entity>
 
-		<a-entity
-		id="a-greenhouse-curve"
-		clone-along-curve="curve: #a-greenhouse-line; spacing: 0.05; scale: .5 .5 .5; rotation: 0 0 0;" 
-		rotation="0 0 0"
-		position="0"
-		geometry="primitive:box; height:0.1; width:0.2; depth:0.1"
-		></a-entity>
+			<a-plane
+				color="#000"
+				height="3"
+				width="4"
+				rotation="270 0 0"
+				material="opacity: 0.8;"
+			></a-plane>
+		</a-entity>
 
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
