@@ -84,8 +84,17 @@ The features we use for this application.
 The data is being stored on a stomp server and we use a connection via a StompJS package to get that data. What we receive is:
 
 <!-- example data -->
-```
-
+```json
+{
+  "consumption": "",
+  "id": "11",
+  "main": [
+    "312.31233128173",
+    "0",
+    "21.0313032137"
+  ],
+  "solar": "191.00238232131"
+}
 ```
 That data we send to the client so we can use it for the AR and the website.
 
