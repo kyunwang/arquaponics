@@ -8,6 +8,12 @@ var vScale = d3.scaleLinear().range([0, 3]);
 var ghConsumption = d3.select('#a-greenhouse-consumption-line');
 var ghSolar = d3.select('#a-greenhouse-solar-line');
 
+// Getting the label value containers
+var labelConsumption = d3.select('#a-consumption-value');
+var labelSolar = d3.select('#a-solar-value');
+// var labelConsumption = document.getElementById('a-consumption-value');
+// var labelSolar = document.getElementById('a-solar-value');
+
 function renderLine(data) {
 	if (data.length === 0) return;
 
@@ -18,10 +24,15 @@ function renderLine(data) {
 	var ghConLine = ghConsumption.selectAll('a-curve-point').data(data);
 	var ghSolLine = ghSolar.selectAll('a-curve-point').data(data);
 
+	var lastItem = data[data.length - 1];
+
 	// Calling the function to set the curve points
 	// Which will create the path for the line
 	setLine(ghConLine, 'consumption');
 	setLine(ghSolLine, 'solar');
+
+	setLabel(labelConsumption, lastItem, 'consumption');
+	setLabel(labelSolar, lastItem, 'solar');
 }
 
 function setLine(lineGraph, type) {
@@ -49,6 +60,11 @@ function setLine(lineGraph, type) {
 
 	// Remove old elements as needed.
 	lineGraph.exit().remove();
+}
+
+// Setting the values of the labels
+function setLabel(label, data, type) {
+	label.attr('value', normalizeNum(data[type]));
 }
 
 // Initial render
