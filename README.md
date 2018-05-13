@@ -108,5 +108,61 @@ The tools/packages used for this project:
 * [StompJS](https://www.npmjs.com/package/stompjs) - _StompJS is being used for the connection through the database to the server_
 * [ExpressJS](https://expressjs.com/) - _Express is being used for the server_
 
+# TODO
+
+### Data
+- [x] Connection to the server
+  - [x] Real time connection with external server
+  - [x] retrieve real time data
+  - [x] StompJS
+  - [x] SockJS
+
+
+- [ ] Static data
+  - [ ] Clean up
+  - [ ] Use that data for d3.js
+  - [ ] Write and explain what you can see in the data.
+  - [ ] find data on gray energy and compare (via d3).
+
+### Augmented Reality
+- [x] Augmented reality set up
+- [ ] Complete one AR graph
+  - [x] Get d3JS to work in AR
+  - [x] Show a Line graph
+  - [x] Add the retrieved data in AR
+  - [x] Real time Updating the line graph (in AR)
+  - [ ] In(Solar) and out(consumption)
+  - [ ] Text in the AR experience  
+  - [ ] Labels for in out  
+
+### D3 js
+- [ ] D3 graphs for the website
+  - [ ] Fish data graph
+  - [ ] Harvest graph
+  - [ ] NO4 graph
+
+### Enhancements
+- [ ] Dynamic for multiple boats
+  - [ ] So it's easier to make multiple boats
+
+### Website
+- [ ] Website
+  - [x] Styling
+  - [x] Landing page
+  - [x] Zero state
+  - [ ] Content
+  - [ ] Load in the graphs
+  - [ ] Explain the graphs
+  - [ ] Explain the Aquaponics process
+
+### Research
+- [x] Research
+  - [x] Pictures of the tour
+  - [x] Location
+  - [x] User Stories
+  - [x] User Scenarios
+  - [x] Ideal User Flow
+  - [x] Goals
+
 # License
 GPLv3 :copyright: Arquaponies
