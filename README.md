@@ -34,7 +34,7 @@ Our concept is a Augmented Reality (AR) tour that you can follow on the awesome 
 There will be a companion website, where you can see all the data and the explanation of the data. This is for the user who wants to look back and ponder on the amazing things De Ceuvel does.
 
 ## Story
-What De Ceuvel does is making self made bio energy from plants and that energy will be needed to make some produce. That produce is used for the café.
+What De Ceuvel does is making self made bio energy from plants and that energy will be needed to make some produce. That produce is used for the café. They make use of an aquaponics system and a joint 'self sufficient' energy producing and sharing system.
 
 ## User Stories/Stakeholders
 > As space&matter (a partner) I would want to know how De Ceuvel is doing on generating energy and how much it's sustainable energy is presented.
@@ -62,11 +62,7 @@ Marit
 3. De Ceuvel wants to let the partners know what they are doing and how they are doing it.
 
 # Features
-* [d3.js](https://github.com/d3) - _d3JS is being used to render graphs with data_
-* [a-frame](https://aframe.io/) - _a frame is being used for the augmentend reality_
-* [SockJS](https://github.com/sockjs) - _SockJS is being used for the socket connection to the client_
-* [StompJS](https://www.npmjs.com/package/stompjs) - _StompJS is being used for the connection through the database to the server_
-* [ExpressJS](https://expressjs.com/) - _Express is being used for the server_
+
 
 # The data
 <!-- data life cycle? data retention/database ? -->
@@ -90,11 +86,11 @@ Unfortunately we have a lot of data that isn't real time, that data will be used
 
 # Tools
 The tools/packages used for this project:
-- [Express(Node.js)](https://expressjs.com/)
-- [EJS Templating](http://ejs.co/)
-- [D3.js](https://d3js.org/)
-- [A-Frame](https://aframe.io/)
-- [AR.js](https://github.com/jeromeetienne/AR.js)
-
+* [d3.js](https://github.com/d3) - _d3JS is being used to render graphs with data_
+* [a-frame](https://aframe.io/) - _a frame is being used for the augmentend reality_
+- [AR.js](https://github.com/jeromeetienne/AR.js) - _transforms the vr enviroment to AR enviroment_
+* [SockJS](https://github.com/sockjs) - _SockJS is being used for the socket connection to the client_
+* [StompJS](https://www.npmjs.com/package/stompjs) - _StompJS is being used for the connection through the database to the server_
+* [ExpressJS](https://expressjs.com/) - _Express is being used for the server_
 # License
 MIT
