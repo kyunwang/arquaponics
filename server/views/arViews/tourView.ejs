@@ -41,34 +41,7 @@
 
 
 
-	<script type="text/javascript">
-		var sock = new SockJS('http://localhost:9999/echo');
-		// var sock = new SockJS('https://0214295b.ngrok.io');
-		sock.onopen = function() {
-			console.log('open');
-			// sock.send('bal');
-		};
-		
-		sock.onmessage = function(e) {
-			var data = JSON.parse(e.data);
-			// console.log(data.consumption)
-
-			// Push data to the 
-			graphData.push(data);
-
-			if (graphData.length) {
-				if (graphData.length > 20) {
-					graphData.shift();	
-				}
-				renderLine(graphData);
-			} 
-
-		};
-		
-		sock.onclose = function() {
-			console.log('Sock connection closed');
-		};
-	</script>
+	<script src="/scripts/clientSock.js"></script>
 	<script src="/scripts/arGraphs.js"></script>
 
 <%- include('../partials/footer.ejs') %>
