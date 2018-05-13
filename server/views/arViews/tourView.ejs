@@ -8,11 +8,11 @@
 
 		<!-- <a-text value="TEST" rotation="270 0 0" position="0 0 0"></a-text> -->
 				
-		<a-curve id="a-greenhouse-consumption" type="Line">
+		<a-curve id="a-greenhouse-consumption-line" type="Line">
 			<%# Example point: <a-curve-point position="-2 1 -3"></a-curve-point> %>
 		</a-curve>
 				
-		<a-curve id="a-greenhouse-solar" type="Line"></a-curve>
+		<a-curve id="a-greenhouse-solar-line" type="Line"></a-curve>
 
 		<%#
 		Draws a line
@@ -20,11 +20,21 @@
 		%>
 		<a-entity id="a-greenhouse-con">
 			<a-entity
-				id="a-greenhouse-curve"
-				clone-along-curve="curve: #a-greenhouse-line; spacing: 0.05; scale: .3 .3 .3; rotation: 0 0 0;" 
+				id="a-greenhouse-consumption"
+				clone-along-curve="curve: #a-greenhouse-consumption-line; spacing: 0.05; scale: .3 .3 .3; rotation: 0 0 0;" 
 				rotation="0 0 0"
 				position="-1.2 .5 .4"
 				material="color: #B21900;"
+				geometry="primitive:box; height:0.1; width:0.2; depth:0.1;"
+				scale="0.7"
+			></a-entity>
+
+			<a-entity
+				id="a-greenhouse-solar"
+				clone-along-curve="curve: #a-greenhouse-solar-line; spacing: 0.05; scale: .3 .3 .3; rotation: 0 0 0;" 
+				rotation="0 0 0"
+				position="-1.2 .5 .4"
+				material="color: #green;"
 				geometry="primitive:box; height:0.1; width:0.2; depth:0.1;"
 				scale="0.7"
 			></a-entity>

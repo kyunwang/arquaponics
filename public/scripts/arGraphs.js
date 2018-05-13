@@ -5,8 +5,8 @@ var graphData = [];
 var vScale = d3.scaleLinear().range([0, 5]);
 
 // Getting the containers to assign the curve points to
-var greenhouseConsumption = d3.select('#a-greenhouse-consumption');
-var greenhouseSolar = d3.select('#a-greenhouse-solar');
+var greenhouseConsumption = d3.select('#a-greenhouse-consumption-line');
+var greenhouseSolar = d3.select('#a-greenhouse-solar-line');
 
 var greenhouseCon = d3.select('#a-greenhouse-con');
 
@@ -79,6 +79,9 @@ function renderY(data) {
 
 function getMinimum(data) {
 	var min = d3.min(data, function(d) {
+		// console.log(Math.abs(d.consumption));
+		// console.log(Math.abs(d.solar).toFixed(2));
+
 		return d.consumption;
 	});
 
@@ -91,3 +94,7 @@ function getMaximum(data) {
 	});
 	return max + 5;
 }
+
+function normalizeNum(num) {}
+
+function smallerNum(data) {}
