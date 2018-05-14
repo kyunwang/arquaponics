@@ -5,7 +5,7 @@
     /* Base font */
     --base-font-size: 1em;
     --base-font-weight: 300;
-    --base-line-height: 1.4;
+    --base-line-height: 1.7;
 
     /* Title font */
     --title-font-size: 2.5em;
@@ -64,7 +64,9 @@ body {
 h1 {
   align-self: center;
   position: relative;
+  z-index: 2;
   display: block;
+  margin: var(--spacing-unit) 0;
   color: var(--color-black);
   font-size: var(--title-font-size);
   font-weight: var(--title-font-weight);
@@ -77,28 +79,17 @@ h1::after {
   height: 1rem;
   content: '';
 }
-@media all and (min-width: 35rem) {
-  h1::before,
-  h1::after {
-    height: 1.5rem;
-  }
-}
 h1::before {
   left: -50vw;
   bottom: -.25rem;
   width: calc(50vw + 60%);
-  background-color: var(--color-white);
+  background-color: var(--color-grey);
 }
 h1::after, h1::after {
   left: -15vw;
   bottom: -1.25rem;
   width: calc(15vw + 80%);
   background-color: var(--color-primary);
-}
-@media all and (min-width: 35rem) {
-  h1::after {
-    bottom: -1.75rem;
-  }
 }
 
 h2 {
@@ -192,7 +183,45 @@ main.white-bg {
   flex-direction: column;
   width: 100%;
   max-width: 75rem;
+  padding: calc(2 * var(--spacing-unit)) 0;
   margin: 0 auto;
+}
+
+.site-section .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*
+====================
+  Page Article
+====================
+*/
+
+.page-article {
+  display: block;
+  width: 100%;
+  max-width: 33rem;
+  margin: var(--spacing-unit);
+}
+
+.page-article p {
+  margin: var(--spacing-unit) 0;
+}
+
+/*
+====================
+  D3 Graph
+====================
+*/
+
+.d3-graph {
+  flex: 1 0 auto;
+  display: block;
+  min-height: 100px;
+  margin: var(--spacing-unit);
+  background-color: var(--color-grey);
 }
 
 /*
@@ -301,6 +330,11 @@ main.white-bg {
   max-width: 75rem;
   margin: calc(2 * var(--spacing-unit)) auto;
   text-align: center;
+}
+
+.intro-title::before,
+.intro-title::after {
+  background: none;
 }
 
 .intro-info h2 {
