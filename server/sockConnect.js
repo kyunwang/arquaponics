@@ -62,7 +62,7 @@ function sockConnect(echo) {
 		}
 	});
 
-	echo.installHandlers(server, { prefix: '/echo' });
+	echo.installHandlers(server, { prefix: '/sock-ar-graph' });
 }
 
 server.listen(9999, '0.0.0.0');
