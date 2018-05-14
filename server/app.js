@@ -34,6 +34,14 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 // Use bodyparser
 app.use(bodyParser.json()).use(bodyParser.urlencoded({ extended: false }));
 
+// Skip the .map files as we do not have it and it causes the app to break
+app.use((req, res, next) => {
+	if (req.path.match(/\.map$/i)) {
+		if (typeof callback === 'function') return callback(req, res, next);
+		res.send('');
+	} else next();
+});
+
 // Add global middleware available in templates and all routes
 app.use((req, res, next) => {
 	res.locals.h = helpers;
