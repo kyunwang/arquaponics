@@ -1,5 +1,5 @@
 var sock = new SockJS('http://localhost:9999/echo');
-// var sock = new SockJS('https://0214295b.ngrok.io');
+// var sock = new SockJS('https://834e6f60.ngrok.io/echo');
 
 sock.onopen = function() {
 	console.log('open');
