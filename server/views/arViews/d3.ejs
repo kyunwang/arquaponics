@@ -1,10 +1,6 @@
 
 <%- include('../partials/header.ejs') %>
-
-	<h1>Real time date</h1>
-	<p>wahoo</p>
-
-  <svg id="harvest" width="960" height="500"></svg>
+  <svg id="harvest" width="1000" height="500"></svg>
 
   <script type="text/javascript">
 	  var svg = d3.select("#harvest"),
@@ -52,19 +48,19 @@
 		    .append("text")
 		      .attr("fill", "#000")
 		      .attr("transform", "rotate(-90)")
-		      .attr("y", 6)
-		      .attr("dy", "0.71em")
+		      .attr("y", 9)
+		      .attr("dy", "1em")
 		      .attr("text-anchor", "end")
-		      .text("amount of plants");
+		      .text("harvested in KG");
 
-		  g.append("path")
-		      .datum(data)
-		      .attr("fill", "none")
-		      .attr("stroke", "black")
-		      .attr("stroke-linejoin", "round")
-		      .attr("stroke-linecap", "round")
-		      .attr("stroke-width", 1.5)
-		      .attr("d", line);
+			g.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.Date); })
+      .attr("y", function(d) { return y(d.herbs); })
+      .attr("width", 10)
+      .attr("height", function(d) {  return height - y(d.herbs); });
 
 		});
   </script>
