@@ -113,8 +113,7 @@ p {
   max-width: 30em;
 }
 
-button,
-a[role='button'] {
+.action-btn {
   position: relative;
   top: 0;
   display: inline-block;
@@ -135,8 +134,7 @@ a[role='button'] {
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
-button::after,
-a[role='button']::after {
+.action-btn::after {
   position: absolute;
   left: 0;
   bottom: -.5rem;
@@ -149,26 +147,20 @@ a[role='button']::after {
   content: '';
   transition: all .3s ease-in-out;
 }
-button:hover,
-button:focus,
-a[role='button']:hover,
-a[role='button']:focus,
-a[role='button']:active {
+.action-btn:hover,
+.action-btn:focus,
+.action-btn:active {
   top: .5rem;
 }
-button:hover::after,
-button:focus::after,
-a[role='button']:hover::after,
-a[role='button']:focus::after,
-a[role='button']:active::after {
+.action-btn:hover::after,
+.action-btn:focus::after,
+.action-btn:active::after {
   bottom: 0;
 }
 
 @media all and (prefers-reduced-motion: reduce) {
-  button,
-  button::after,
-  a[role='button'],
-  a[role='button']::after {
+  .action-btn,
+  .action-btn::after {
     transition: none;
   }
 }
