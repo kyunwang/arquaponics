@@ -308,20 +308,34 @@ main {
 .badges {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   background-color: var(--color-primary);
 }
 
 .badge {
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 33.3333333vw;
-  height: 33.3333333vw;
+  width: 100vw;
+  height: 100vw;
   background-color: rgba(20, 20, 20, .05);
   text-decoration: none;
   transition: all .3s ease-in-out;
+}
+@media all and (min-width: 32.5rem) {
+  .badge {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+@media all and (min-width: 50rem) {
+  .badge {
+    width: 33.3333333vw;
+    height: 33.3333333vw;
+  }
 }
 .badge:hover,
 .badge:focus,
@@ -331,21 +345,29 @@ main {
 
 .badge img {
   display: block;
-  width: 9.375rem;
-  height: 9.375rem;
+  width: 100%;
+  height: 100%;
+  max-width: 9.375rem;
+  max-height: 9.375rem;
 }
 
 .badge span {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3.75rem;
+  height: 3.125rem;
   padding: 1.5rem;
   margin-top: var(--spacing-unit);
   color: var(--color-white);
   background-color: var(--color-black);
-  font-size: var(--heading-font-size);
+  font-size: 1em;
   font-weight: var(--heading-font-weight);
   line-height: 1;
   text-align: center;
+}
+@media all and (min-width: 32.5rem) {
+  .badge span {
+    height: 3.75rem;
+    font-size: var(--heading-font-size);
+  }
 }
