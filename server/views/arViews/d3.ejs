@@ -10,20 +10,8 @@
 
 		var parseTime = d3.timeParse("%Y-%m-%d");
 
-
-
 		var x = d3.scaleTime().rangeRound([0,width]),
 		    y = d3.scaleLinear().rangeRound([height, 0]);
-
-	  var format = d3.timeFormat("%y-%m-%d");
-
-		var testData = "11-Apr-12";
-		// console.log(parseTime(testData));
-	  // console.log(format(new Date));
-
-		var line = d3.line()
-		    .x(function(d) { return x(d.Date); })
-		    .y(function(d) { return y(parseInt(d.herbs)); });
 
 		var g = svg.append("g")
 		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
