@@ -1,57 +1,72 @@
 
 <%- include('../partials/header.ejs') %>
 
-	<h1>Data</h1>
-	<p><%= message %></p>
-  <pre><%= h.dump(data) %></pre>
-
-
+	<h1>Real time date</h1>
+	<p>wahoo</p>
 
   <svg id="harvest" width="960" height="500"></svg>
 
   <script type="text/javascript">
+	  var svg = d3.select("#harvest"),
+	    margin = {top: 20, right: 20, bottom: 30, left: 40},
+	    width = +svg.attr("width") - margin.left - margin.right,
+	    height = +svg.attr("height") - margin.top - margin.bottom;
 
-  var svg = d3.select("#harvest"),
-    margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom;
+		var parseTime = d3.timeParse("%Y-%m-%d");
 
-var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
-    y = d3.scaleLinear().rangeRound([height, 0]);
 
-var g = svg.append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("/productionAquaponics.csv").then(function (data) {
-	x.domain(d3.extent(data, function(d) { return d.Date; }));
-	y.domain(d3.extent(data, function(d) { return d.herbs; }));
+		var x = d3.scaleTime().rangeRound([0,width]),
+		    y = d3.scaleLinear().rangeRound([height, 0]);
 
-	g.append("g")
-		.attr("transform", "translate(0" + height + ")")
-		.call(d3.axisBottom(x))
-		.select(".domain");
+	  var format = d3.timeFormat("%y-%m-%d");
 
-		g.append("g")
-      .call(d3.axisLeft(y))
-    .append("text")
-      .attr("fill", "#000")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", "0.71em")
-      .attr("text-anchor", "end")
-      .text("amount of herbs");
+		var testData = "11-Apr-12";
+		// console.log(parseTime(testData));
+	  // console.log(format(new Date));
 
-  g.append("path")
-      .datum(data)
-      .attr("fill", "none")
-      .attr("stroke", "steelblue")
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-linecap", "round")
-      .attr("stroke-width", 1.5)
-      .attr("d", line);
+		var line = d3.line()
+		    .x(function(d) { return x(d.Date); })
+		    .y(function(d) { return y(parseInt(d.herbs)); });
 
-});
+		var g = svg.append("g")
+		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+		d3.csv("/productionAquaponics.csv").then(function (data) {
+
+		data.forEach(function (d){
+			console.log(parseTime(d.Date));
+			d.Date = parseTime(d.Date);
+	})
+
+			x.domain(d3.extent(data, function(d) { return d.Date; }));
+			y.domain(d3.extent(data, function(d) { return parseInt(d.herbs); }));
+
+			g.append("g")
+				.attr("transform", "translate(0," + height + ")")
+				.call(d3.axisBottom(x))
+				.select(".domain");
+
+				g.append("g")
+		      .call(d3.axisLeft(y))
+		    .append("text")
+		      .attr("fill", "#000")
+		      .attr("transform", "rotate(-90)")
+		      .attr("y", 6)
+		      .attr("dy", "0.71em")
+		      .attr("text-anchor", "end")
+		      .text("amount of plants");
+
+		  g.append("path")
+		      .datum(data)
+		      .attr("fill", "none")
+		      .attr("stroke", "black")
+		      .attr("stroke-linejoin", "round")
+		      .attr("stroke-linecap", "round")
+		      .attr("stroke-width", 1.5)
+		      .attr("d", line);
+
+		});
   </script>
 
 <%- include('../partials/footer.ejs') %>
