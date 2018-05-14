@@ -11,8 +11,6 @@ var ghSolar = d3.select('#a-greenhouse-solar-line');
 // Getting the label value containers
 var labelConsumption = d3.select('#a-consumption-value');
 var labelSolar = d3.select('#a-solar-value');
-// var labelConsumption = document.getElementById('a-consumption-value');
-// var labelSolar = document.getElementById('a-solar-value');
 
 function renderLine(data) {
 	if (data.length === 0) return;

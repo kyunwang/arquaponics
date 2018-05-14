@@ -1,6 +1,8 @@
 const SockJS = require('sockjs-client-node');
 const Stomp = require('stompjs');
 
+const amqp = require('amqplib');
+
 // Import sock js stuff
 // const sockjs = require('sockjs');
 const sockConnect = require('../../sockConnect');
@@ -17,7 +19,7 @@ exports.tourView = (req, res) => {
 exports.testRoute = (req, res) => {
 	// req.stomp.init();
 
-	res.render('arViews/testRoute', { message: 'd3 test page', enableD3: true });
+	res.render('arViews/testRoute', { message: 'd3 test page', enableD3: true, amqp: amqp });
 };
 
 exports.apiTest = (req, res) => {
@@ -25,20 +27,45 @@ exports.apiTest = (req, res) => {
 };
 
 // Connect to stomp data stream (sockets)
-exports.getApiData = (req, res, next) => {
-	// req.stomp = stomp;
-
-	// const echo = sockjs.createServer({
-	// 	sockjs_url: '../../../public/scripts/vendor/sockjs-client.v1.min.js',
-	// });
-
-	// // console.log(stomp);
-
-	// const stompy = JSON.stringify(stomp);
-	// console.log(stompy);
-	// console.log('REQ', req.echo);
-
+exports.getApiEnergy = (req, res, next) => {
 	sockConnect(req.echo);
-
 	next();
+};
+
+// Connect to a amqp server for real time data from the aquaponics: example
+// {
+// 	"ph": 6.03051,
+// 	"mscm2": 1.30363,
+// 	"water_temp": 23.5625,
+// 	"humidity": 40.98944,
+// 	"room_temp": 25.08323,
+// 	"lux": 14145,
+// 	"date": "14-05-2018",
+// 	"time": "10:16:36"
+// }
+exports.getApiAqua = (req, res, next) => {
+	amqp.connect('amqp://consumer:zHJR6WPpgUDLt5cF@rabbit.spectral.energy/').then(function(conn) {
+		process.once('SIGINT', function() {
+			conn.close();
+		});
+		return conn.createChannel().then(function(channel) {
+			channel.assertExchange('aquaponics', 'topic', { durable: true }).then(result => {
+				var queue = channel.assertQueue('', { exclusive: true });
+				queue = queue.then(function(_queue) {
+					channel.bindQueue(_queue.queue, 'aquaponics', 'deceuvel');
+					console.log(_queue);
+					return channel.consume(
+						_queue.queue,
+						function(msg) {
+							console.log(" [x] Received '%s'", msg.content.toString());
+						},
+						{ noAck: true }
+					);
+				});
+				return queue.then(function(_consumeOk) {
+					console.log(' [*] Waiting for messages. To exit press CTRL+C');
+				});
+			});
+		});
+	});
 };

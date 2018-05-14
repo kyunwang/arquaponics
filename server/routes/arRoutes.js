@@ -3,7 +3,7 @@ const arController = require('../controllers/arController');
 
 const router = express.Router();
 
-router.get('/', arController.getApiData, arController.tourView);
-router.get('/test', arController.getApiData, arController.testRoute);
+router.get('/', arController.getApiEnergy, arController.tourView);
+router.get('/test', arController.getApiAqua, arController.testRoute);
 
 module.exports = router;
