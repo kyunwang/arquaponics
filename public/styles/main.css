@@ -174,8 +174,24 @@ p {
 main {
   display: block;
   width: 100%;
-  max-width: 75rem;
   padding: var(--spacing-unit);
+}
+
+main.white-bg {
+  background-color: var(--color-white);
+}
+
+/*
+====================
+  Site Section
+====================
+*/
+
+.site-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 75rem;
   margin: 0 auto;
 }
 
@@ -184,12 +200,6 @@ main {
   Intro
 ====================
 */
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
 
 .intro h1 {
   margin: 3rem auto;
