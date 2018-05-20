@@ -23,6 +23,14 @@ const echo = sockjs.createServer({
 	sockjs_url: '../public/scripts/vendor/sockjs-client.v1.min.js',
 });
 
+const apiRoutes = require('./routes/data-api');
+
+const arRoutes = require('./routes/arRoutes');
+
+const echo = sockjs.createServer({
+	sockjs_url: '../public/scripts/vendor/sockjs-client.v1.min.js',
+});
+
 require('dotenv').config({ path: './vars.env' });
 
 // Setting the view engine
