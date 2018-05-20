@@ -22,7 +22,7 @@ A collaboration with:
 
 
 **[Our live application](https://arquaponics.herokuapp.com/)**
-Scan this image for the AR:
+Scan this marker for the AR:
 <div align="center">
 	<img src="/public/assets/hiro-marker.png">
 </div>

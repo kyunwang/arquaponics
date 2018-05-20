@@ -2,8 +2,6 @@ const SockJS = require('sockjs-client-node');
 const Stomp = require('stompjs');
 
 function sockConnect(echo) {
-	console.log(echo);
-
 	echo.on('connection', function(connec) {
 		console.log('connected');
 

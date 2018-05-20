@@ -49,7 +49,7 @@ exports.getApiAqua = (req, res, next) => {
 				var queue = channel.assertQueue('', { exclusive: true });
 				queue = queue.then(function(_queue) {
 					channel.bindQueue(_queue.queue, 'aquaponics', 'deceuvel');
-					console.log(_queue);
+					// console.log(_queue);
 					return channel.consume(
 						_queue.queue,
 						function(msg) {

@@ -1,4 +1,4 @@
-// var sock = new SockJS('http://localhost:9999/sock-ar-graph');
+// var sock = new SockJS('http://localhost:3100/sock-ar-graph');
 var sock = new SockJS('https://arquaponics.herokuapp.com/sock-ar-graph');
 
 sock.onopen = function() {
