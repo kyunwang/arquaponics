@@ -1,8 +1,16 @@
+
 const express = require('express');
-const controller = require('../controllers/controller');
+const wController = require('../controllers/websiteController');
 
 const router = express.Router();
 
-router.get('/', controller.homePage);
+const arController = require('../controllers/arController');
+
+router.get('/', wController.homePage);
+
+router.get('/zerostate', wController.zeroState);
+
+router.get('/home', arController.getApiEnergy, wController.infoPage);
+
 
 module.exports = router;
